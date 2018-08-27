@@ -25,3 +25,5 @@ $ kubectl create -f {path}/fluentd-es-ds.yaml
 $ kubectl create -f {path}/kibana-deployment.yaml
 
 6 部署kibana代理服务
+
+$ kubectl create -f {path}/kibana-service.yaml
