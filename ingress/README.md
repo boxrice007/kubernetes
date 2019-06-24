@@ -8,4 +8,24 @@ Ingress架构图
 
 kubectl create -f namespace.yaml
 
-2 
+2 创建configmap
+
+kubectl create -f configmap.yaml
+
+3 创建default-backend
+
+kubectl create -f default-backend.yaml
+
+4 创建rbac
+
+kubectl create -f rbac.yaml
+
+5 创建nginx-ingress-controller
+
+kubectl create -f with-rbac.yaml
+
+6 创建TCP、UDP
+
+kubectl create -f tcp-services-configmap.yaml
+
+kubectl create -f udp-services-configmap.yaml
