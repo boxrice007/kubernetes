@@ -29,3 +29,7 @@ kubectl create -f with-rbac.yaml
 kubectl create -f tcp-services-configmap.yaml
 
 kubectl create -f udp-services-configmap.yaml
+
+7 创建ingress-controller的service
+
+kubectl create -f service-nodeport.yaml
