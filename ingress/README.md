@@ -33,3 +33,7 @@ kubectl create -f udp-services-configmap.yaml
 7 创建ingress-controller的service
 
 kubectl create -f service-nodeport.yaml
+
+8 创建ingress
+
+kubectl create -f ingress-default-backend.yaml
