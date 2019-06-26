@@ -1,0 +1,5 @@
+dependencies:
+- name: zookeeper
+  version: 1.3.2
+  repository: http://127.0.0.1:8879/charts
+  condition: kafka.zookeeper.enabled,zookeeper.enabled
