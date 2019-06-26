@@ -37,3 +37,7 @@ kubectl create -f service-nodeport.yaml
 8 创建ingress
 
 kubectl create -f ingress-default-backend.yaml
+
+测试
+
+![image](https://github.com/boxrice007/kubernetes/blob/master/ingress/img/ingress.png)
