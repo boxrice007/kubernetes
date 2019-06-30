@@ -1,0 +1,47 @@
+heapster-7bb7cf984f-9956v               0/1     Pending   0
+[root@Master01 ~]# kubectl describe pod heapster-7bb7cf984f-9956v 
+Name:           heapster-7bb7cf984f-9956v
+Namespace:      kube-system
+Priority:       0
+Node:           <none>
+Labels:         k8s-app=heapster
+                pod-template-hash=7bb7cf984f
+                task=monitoring
+Annotations:    <none>
+Status:         Pending
+IP:             
+Controlled By:  ReplicaSet/heapster-7bb7cf984f
+Containers:
+  heapster:
+    Image:      registry.cn-hangzhou.aliyuncs.com/k8sbl/heapster-amd64:v1.4.2
+    Port:       <none>
+    Host Port:  <none>
+    Command:
+      /heapster
+      --source=kubernetes:https://kubernetes.default
+      --sink=influxdb:http://monitoring-influxdb.kube-system.svc:8086
+    Environment:  <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from heapster-token-sk84t (ro)
+Conditions:
+  Type           Status
+  PodScheduled   False 
+Volumes:
+  heapster-token-sk84t:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  heapster-token-sk84t
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type     Reason            Age                 From               Message
+  ----     ------            ----                ----               -------
+  Warning  FailedScheduling  11s (x6 over 4m2s)  default-scheduler  0/1 nodes are available: 1 node(s) had taints that the pod didn't tolerate.
+
+
+Slove:
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
+
