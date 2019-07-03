@@ -17,3 +17,15 @@ image-repository: aliyun repository
 service-cidr: cluster ip
 
 pod-netwokr-cidr: pod ip
+
+
+# Bash-completion
+
+## yum install -y bash-completion
+
+## source /usr/share/bash-completion/bash_completion
+
+## source <(kubectl completion bash)
+
+## echo "source <(kubectl completion bash)" >> ~/.bashrc
+ 
