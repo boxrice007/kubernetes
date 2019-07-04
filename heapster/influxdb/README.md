@@ -1,6 +1,6 @@
-#Here are the problems encountered
+# Here are the problems encountered
 
-###heapster-7bb7cf984f-9956v               0/1     Pending   0
+### heapster-7bb7cf984f-9956v               0/1     Pending   0
 
 [root@Master01 ~]# kubectl describe pod heapster-7bb7cf984f-9956v 
 
