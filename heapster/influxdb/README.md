@@ -65,4 +65,7 @@ rules:
 
   - watch
 
+#### kubectl delete -f heapster.yaml
+
+#### kubectl create -f heapster.yaml
 
