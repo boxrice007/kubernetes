@@ -18,6 +18,9 @@ service-cidr: cluster ip
 
 pod-netwokr-cidr: pod ip
 
+### 0/1 nodes are available: 1 node(s) had taints that the pod didn't tolerate.
+
+kubectl taint nodes --all node-role.kubernetes.io/master-
 
 # Bash-completion
 
