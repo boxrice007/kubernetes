@@ -29,7 +29,11 @@ data:
           "nodename": "__KUBERNETES_NODE_NAME__",
           "mtu": __CNI_MTU__,
           "ipam": {
-              "type": "calico-ipam"
+              "type": "calico-ipam",
+              "assign_ipv4": "true",
+              "assign_ipv6": "true",
+              "ipv4_pools": ["10.0.0.0/24", "20.0.0.0/16", "default-ipv4-ippool"],
+              "ipv6_pools": ["2001:db8::1/120", "default-ipv6-ippool"]
           },
           "policy": {
               "type": "k8s"
