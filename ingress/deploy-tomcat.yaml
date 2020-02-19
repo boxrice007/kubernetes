@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-tomcat
+  namespace: default
+spec:
+  selector:
+    app: myapp-tomcat
+    release: canary
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+  - name: https
+    port: 8009
+    targetPort: 8009
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-tomcat
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myapp-tomcat
+      release: canary
+  template:
+    metadata:
+      labels:
+        app: myapp-tomcat
+        release: canary
+    spec:
+      containers:
+      - name: myapp-tomcat
+        image: deploy.bocloud/mytomcat:latest
+        ports:
+        - name: http
+          containerPort: 8080
+        - name: https
+          containerPort: 8009
